@@ -1,8 +1,3 @@
-The "scampi" language is a simple dynamically typed language that takes
-inspiration from Rust, Python, and JavaScript.
-
-Here is a the proposed syntax:
-
 ```rust
 // single-line comments are denoted by a double slash
 /*
@@ -13,7 +8,7 @@ Here is a the proposed syntax:
 // variables are declared without "var" or "let"
 some_int=69 // integers are 64-bit
 some_string="foo" // strings are UTF-8
-some_arr=[1,2,3,] // arrays are dynamically sized
+some_arr=[1,2,3] // arrays are dynamically sized
 
 // ARRAYS
 // arrays are zero-indexed
