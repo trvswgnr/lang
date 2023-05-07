@@ -1,0 +1,47 @@
+program = {statement};
+
+statement = assignment | if_statement | while_statement | for_statement | function_definition | expression;
+
+assignment = identifier "=" expression ";";
+
+if_statement = "if" "(" expression ")" block "else" block;
+
+while_statement = "while" "(" expression ")" block;
+
+for_statement = "for" identifier "in" expression block;
+
+function_definition = "def" identifier "(" [parameter_list] ")" block;
+
+parameter_list = identifier {"," identifier};
+
+block = "{" {statement} "}";
+
+expression = literal | identifier | function_call | binary_operation | unary_operation | "(" expression ")";
+
+literal = integer | float | string | "True" | "False" | "None";
+
+integer = digit {digit};
+
+float = digit {digit} "." digit {digit};
+
+string = '"' {character} '"' | "'" {character} "'";
+
+digit = "0".."9";
+
+character = ? any Unicode character except double or single quotes ?;
+
+identifier = letter {letter | digit | "_"};
+
+letter = "a".."z" | "A".."Z";
+
+function_call = identifier "(" [expression_list] ")";
+
+expression_list = expression {"," expression};
+
+binary_operation = expression binary_operator expression;
+
+binary_operator = "+" | "-" | "*" | "/" | "%" | "**" | "==" | "!=" | "<" | ">" | "<=" | ">=" | "and" | "or";
+
+unary_operation = unary_operator expression;
+
+unary_operator = "not" | "-" | "+";
